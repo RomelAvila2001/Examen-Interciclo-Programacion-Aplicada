@@ -251,7 +251,9 @@ public class VentanaGestionActividades extends javax.swing.JInternalFrame {
                 resultad = controladorActividades.update(actividades);
             } else {
                 Actividades actividades= new Actividades(nombre, resultado);
+                
                 resultad = controladorActividades.create(actividades);
+                System.out.println(controladorActividades.getListaGenerica());
             }
             limpiar();
             JOptionPane.showMessageDialog(this, "Operación : " + resultad);
