@@ -35,25 +35,24 @@ public class VentanaRegistraEstudiante extends javax.swing.JInternalFrame {
         
         this.controladorCurso=controladorCurso;
         this.controladorAlumno=controladorAlumno;
-    }
-    
-    public void getDocente(Docente docente) {
-        this.docente=docente;
+        docente=Docente.instance;
+        
     }
     
     
     public List<Alumno> listaAlumno(){
         List<Alumno> listaAlumnos;
         listaAlumnos = new ArrayList<>();
-        
         for (Alumno alumno : controladorAlumno.getListaGenerica()){
             Curso curso= docente.getCurso();
             Curso curso2= alumno.getCurso();
+            System.out.println(curso);
+            System.out.println(curso2);
             if(curso.equals(curso2)){
                 listaAlumnos.add(alumno);
             }
         }
-        return null;
+        return listaAlumnos;
     }
     
     

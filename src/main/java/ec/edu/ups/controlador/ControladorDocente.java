@@ -30,6 +30,7 @@ public class ControladorDocente extends Controlador<Docente>{
         Docente docente= listaDocente.stream().filter(dosen-> dosen.getCorreo().equals(correo)&& dosen.getContrase().equals(contrase)).findAny().get();
         
         if(docente!=null){
+            Docente.instance=docente;
             return Docente.getInstance();
         }
         return null;
@@ -40,5 +41,5 @@ public class ControladorDocente extends Controlador<Docente>{
             }
         }
         return null;*/
-   } 
+    } 
 }

@@ -213,7 +213,7 @@ public class VentanaGestionActividades extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_txtNombreCursoActionPerformed
 
     private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
-       controladorActividades.ingresarRegex("(http(s)?\\:\\/\\/)(www)?(.[^\"\\s])+");
+       controladorActividades.ingresarRegex("<a\\shref=\\\"\\/store\\/apps\\/details\\?id=(\\w+)(\\.(\\w+))+\\\"(\\s)?><div\\sclass=\\\"((\\w+)\\s(\\w+))\\\"\\stitle=\\\"(\\w+|([.,\\/#!$%\\^&\\;:=-_\\s]))*\\\">");
        StringBuilder stringBuilder=new StringBuilder();
        String textoBusqueda=txtActividad.getText();
        
@@ -233,6 +233,7 @@ public class VentanaGestionActividades extends javax.swing.JInternalFrame {
        
         resultado= controladorActividades.obtenerUrlGoogle(stringBuilder.toString());
         Lista(resultado);
+        
        //resultado.stream().forEach(s-> System.out.println(s.replaceAll("<a\\shref=\"","")));
        
     }//GEN-LAST:event_btnBuscarActionPerformed

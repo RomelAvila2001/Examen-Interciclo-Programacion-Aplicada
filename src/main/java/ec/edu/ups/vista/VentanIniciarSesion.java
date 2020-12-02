@@ -21,20 +21,23 @@ public class VentanIniciarSesion extends javax.swing.JInternalFrame {
     private ControladorDocente controladorDocente;
     private VentanaPrincipal ventanaPrincipal;
     private VentanaRegistraEstudiante ventanaRegistraEstudiante;
+    private VentanaGestionActividades ventanaGestionActividades;
     /**
      * Creates new form VentanIniciarSesion
      * @param controladorRector
      * @param ventanaPrincipal
      * @param controladorDocente
      * @param ventanaRegistraEstudiante
+     * @param ventanaGestionActividades
      */
     public VentanIniciarSesion(ControladorRector controladorRector, VentanaPrincipal ventanaPrincipal,
-            ControladorDocente controladorDocente, VentanaRegistraEstudiante ventanaRegistraEstudiante) {
+            ControladorDocente controladorDocente, VentanaRegistraEstudiante ventanaRegistraEstudiante, VentanaGestionActividades ventanaGestionActividades) {
         initComponents();
         
         this.controladorRector= controladorRector;
         this.controladorDocente=controladorDocente;
         this.ventanaPrincipal=ventanaPrincipal;
+        this.ventanaGestionActividades= ventanaGestionActividades;
         
     }
 
@@ -169,8 +172,10 @@ public class VentanIniciarSesion extends javax.swing.JInternalFrame {
             }else{
                 Docente docente= controladorDocente.iniciarSesion(correo, password);
                 if (docente != null) {
-                    System.out.println();
-                    //ventanaRegistraEstudiante.getDocente(docente);
+                    System.out.println(docente);
+                    
+                    //ventanaRegistraEstudiante.setDocente(docente);
+                    
 
                     ventanaPrincipal.getMenuItemCrearActividad().setVisible(true);
                     ventanaPrincipal.getMenuItemCerrarSesion().setVisible(true);

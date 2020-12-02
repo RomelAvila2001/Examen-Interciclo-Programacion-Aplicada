@@ -47,7 +47,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         ventanaRegistraEstudiante = new VentanaRegistraEstudiante(controCurso,controladorAlumno);
         ventanaGestionActividades = new VentanaGestionActividades(controladorActividades);
         
-        ventanaIniciarSesion = new VentanIniciarSesion(controladorRector,this,controladorDocente,ventanaRegistraEstudiante);
+        ventanaIniciarSesion = new VentanIniciarSesion(controladorRector,this,controladorDocente,ventanaRegistraEstudiante,ventanaGestionActividades);
         
         
         menuItemAbrirCurso.setVisible(false);
@@ -56,6 +56,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         menuItemRegistrarDocente.setVisible(false);
         menuItemRegistrarAlumno.setVisible(false);
         menuItemCrearActividad.setVisible(false);
+        
+        System.out.println(controladorDocente.getListaGenerica());
         
     }
 
