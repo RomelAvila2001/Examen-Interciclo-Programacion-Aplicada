@@ -5,6 +5,7 @@
  */
 package ec.edu.ups.modelo;
 
+import java.io.Serializable;
 import java.util.Objects;
 import java.util.Set;
 
@@ -12,7 +13,7 @@ import java.util.Set;
  *
  * @author NANCY
  */
-public class Actividades {
+public class Actividades implements Serializable{
     private String nombre;
     private Set<String>Aplicaciones;
     private Curso curso;
